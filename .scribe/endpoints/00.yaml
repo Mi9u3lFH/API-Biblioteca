@@ -1,0 +1,1121 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle an incoming registration request.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vmqeopfuudtdsufvyvddq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      surname:
+        name: surname
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: amniihfqcoynlazghdtqt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      role:
+        name: role
+        description: ''
+        required: true
+        example: bibliotecario
+        type: string
+        enumValues:
+          - directivo
+          - bibliotecario
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: andreanne00@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: vmqeopfuudtdsufvyvddq
+      surname: amniihfqcoynlazghdtqt
+      role: bibliotecario
+      email: andreanne00@example.org
+      password: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle an incoming authentication request.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: qkunze@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'O[2UZ5ij-e/dl4m{o,'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      email: qkunze@example.com
+      password: 'O[2UZ5ij-e/dl4m{o,'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/authors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Devuelve todos los autores registrados junto a sus libros.'
+      description: 'Sin restricciones de usuario.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          [
+            {
+              "library_author_id": 0,
+              "library_author_name": "",
+              "library_author_birthdate": "0000-00-00",
+              "library_author_biography": "",
+              "created_by": 0,
+              "last_modified_by": 0,
+              "created_at": "0000-00-00",
+              "updated_at": "0000-00-00",
+              "has_books": [
+                {
+                  "library_book_id": 0,
+                  "library_book_title": ""
+                  "library_book_description": ""
+                  "library_book_published_year": 0000
+                  "created_by": 0,
+                  "last_modified_by": 0,
+                  "created_at": "0000-00-00",
+                  "updated_at": "0000-00-00",
+                }
+              ]
+            }
+          ]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/authors/{library_author_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Obtener detalle de un autor y sus libros.'
+      description: 'Sin restricción de usuarios.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_author_id:
+        name: library_author_id
+        description: 'The ID of the library author.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      author:
+        name: author
+        description: 'ID del autor.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_author_id: 1
+      author: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "library_author_id": 0,
+            "library_author_name": "",
+            "library_author_birthdate": "0000-00-00",
+            "library_author_biography": "",
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_books": [
+              {
+                "library_book_id": 0,
+                "library_book_title": ""
+                "library_book_description": ""
+                "library_book_published_year": 0000
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/books
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Devuelve todos los libros registrados junto a sus autores.'
+      description: 'Sin restricciones de usuario.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          [
+            {
+              "library_book_id": 0,
+              "library_book_title": "",
+              "library_book_description": "",
+              "library_book_published_year": 0000,
+              "created_by": 0,
+              "last_modified_by": 0,
+              "created_at": "0000-00-00",
+              "updated_at": "0000-00-00",
+              "has_authors": [
+                {
+                  "library_author_id": 0,
+                  "library_author_name": ""
+                  "library_author_birthdate": "0000-00-00",
+                  "library_author_biography": "",
+                  "created_by": 0,
+                  "last_modified_by": 0,
+                  "created_at": "0000-00-00",
+                  "updated_at": "0000-00-00",
+                }
+              ]
+            }
+          ]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/books/{library_book_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Obtener detalle de un libro y sus autores.'
+      description: 'Sin restricción de usuarios.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_book_id:
+        name: library_book_id
+        description: 'The ID of the library book.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'ID del libro.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_book_id: 2
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "library_book_id": 0,
+            "library_book_title": "",
+            "library_book_description": "",
+            "library_book_published_year": 0000,
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_authors": [
+              {
+                "library_author_id": 0,
+                "library_author_name": ""
+                "library_author_birthdate": "0000-00-00",
+                "library_author_biography": "",
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Destroy an authenticated session.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'http://localhost:3000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/authors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crea un autor con sus datos y lo asocia a uno o más libros.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      library_author_name:
+        name: library_author_name
+        description: 'Nombre del autor.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_author_birthdate:
+        name: library_author_birthdate
+        description: 'Fecha de nacimiento del autor.'
+        required: true
+        example: consequatur
+        type: date
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_author_biography:
+        name: library_author_biography
+        description: 'Biografía del autor.'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_author_books:
+        name: library_author_books
+        description: 'Lista de IDs de libros relacionados.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      library_author_name: consequatur
+      library_author_birthdate: consequatur
+      library_author_biography: consequatur
+      library_author_books:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "library_author_id": 0,
+            "library_author_name": "",
+            "library_author_birthdate": "0000-00-00",
+            "library_author_biography": "",
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_books": [
+              {
+                "library_book_id": 0,
+                "library_book_title": ""
+                "library_book_description": ""
+                "library_book_published_year": 0000
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/authors/{library_author_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Actualizar un autor.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_author_id:
+        name: library_author_id
+        description: 'The ID of the library author.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      author:
+        name: author
+        description: 'ID del autor a actualizar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_author_id: 1
+      author: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      library_author_name:
+        name: library_author_name
+        description: 'Nombre del autor.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_author_birthdate:
+        name: library_author_birthdate
+        description: 'Fecha de nacimiento del autor.'
+        required: true
+        example: consequatur
+        type: date
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_author_biography:
+        name: library_author_biography
+        description: 'Biografía del autor.'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_author_books:
+        name: library_author_books
+        description: 'Lista de IDs de libros relacionados.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      library_author_name: consequatur
+      library_author_birthdate: consequatur
+      library_author_biography: consequatur
+      library_author_books:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "library_author_id": 0,
+            "library_author_name": "",
+            "library_author_birthdate": "0000-00-00",
+            "library_author_biography": "",
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_books": [
+              {
+                "library_book_id": 0,
+                "library_book_title": ""
+                "library_book_description": ""
+                "library_book_published_year": 0000
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/authors/{library_author_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Eliminar un autor y sus asociaciones con libros.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_author_id:
+        name: library_author_id
+        description: 'The ID of the library author.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      author:
+        name: author
+        description: 'ID del autor a eliminar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_author_id: 1
+      author: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Autor eliminado correctamente."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/books
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crea un libro con sus datos y lo asocia a uno o más autores.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      library_book_title:
+        name: library_book_title
+        description: 'Título del libro.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_book_description:
+        name: library_book_description
+        description: 'Descripción del libro.'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_book_published_year:
+        name: library_book_published_year
+        description: 'Año de publicación.'
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_book_authors:
+        name: library_book_authors
+        description: 'Lista de IDs de autores relacionados.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      library_book_title: consequatur
+      library_book_description: consequatur
+      library_book_published_year: 17
+      library_book_authors:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "library_book_id": 0,
+            "library_book_title": "",
+            "library_book_description": "",
+            "library_book_published_year": 0000,
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_authors": [
+              {
+                "library_author_id": 0,
+                "library_author_name": ""
+                "library_author_birthdate": "0000-00-00",
+                "library_author_biography": "",
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/books/{library_book_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Actualizar un libro.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_book_id:
+        name: library_book_id
+        description: 'The ID of the library book.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'ID del libro a actualizar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_book_id: 2
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      library_book_title:
+        name: library_book_title
+        description: 'Título del libro.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      library_book_description:
+        name: library_book_description
+        description: 'Descripción del libro.'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_book_published_year:
+        name: library_book_published_year
+        description: 'Año de publicación.'
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      library_book_authors:
+        name: library_book_authors
+        description: 'Lista de IDs de autores relacionados.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      library_book_title: consequatur
+      library_book_description: consequatur
+      library_book_published_year: 17
+      library_book_authors:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "library_book_id": 0,
+            "library_book_title": "",
+            "library_book_description": "",
+            "library_book_published_year": 0000,
+            "created_by": 0,
+            "last_modified_by": 0,
+            "created_at": "0000-00-00",
+            "updated_at": "0000-00-00",
+            "has_authors": [
+              {
+                "library_author_id": 0,
+                "library_author_name": ""
+                "library_author_birthdate": "0000-00-00",
+                "library_author_biography": "",
+                "created_by": 0,
+                "last_modified_by": 0,
+                "created_at": "0000-00-00",
+                "updated_at": "0000-00-00",
+              }
+            ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/books/{library_book_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Eliminar un libro y sus asociaciones de autores.'
+      description: 'Solo permitido para usuarios registrados.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      library_book_id:
+        name: library_book_id
+        description: 'The ID of the library book.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      id:
+        name: id
+        description: 'ID del libro a eliminar.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      library_book_id: 2
+      id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Libro eliminado correctamente."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/export
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Exportar resumen de la biblioteca en formato Excel.'
+      description: 'Solo usuarios con rol "directivo" pueden realizar esta acción.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'file excel Respuesta con el archivo Excel para descargar.'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+            "error": "No autorizado."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
