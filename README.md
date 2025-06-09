@@ -1,7 +1,7 @@
 # API Biblioteca — Laravel 12 + Docker
 
 API RESTful para la gestión de libros y autores en una biblioteca, desarrollada con Laravel y contenedores Docker.
-Incluye autenticación, control de roles, auditoría de cambios exportación a Excel y CRUD por API para autores y libros.
+Incluye autenticación, control de roles, auditoría de cambios, exportación a Excel y CRUD por API para autores y libros.
 
 ---
 
@@ -122,8 +122,9 @@ GET     | http://localhost:8000/api/books           | Obtener todos los libros
 
 GET     | http://localhost:8000/api/books/{id}      | Obtener un libro
 
-Las siguientes rutas requieren del Headers: Authorization Bearer _______________________
-Estas las proporcionan los métodos register y login, devolviendo los datos del usuario y el token de acceso
+**Las siguientes rutas requieren del Headers: Authorization Bearer _______________________**
+
+**Estas las proporcionan los métodos register y login, devolviendo los datos del usuario y el token de acceso**
 
 POST    | http://localhost:8000/api/logout          | Eliminar el token del usuario
 
@@ -173,4 +174,6 @@ PUT     | http://localhost:8000/api/books/{id}      | Actualizar datos del libro
 
 DEL     | http://localhost:8000/api/books/{id}      | Eliminar el libro
 
-GET     | http://localhost:8000/api/export          | Exportar resumen para los directores
+A esta ruta solo se podrá acceder con un director, incluye un fichero con la totalidad de libros, autores y libros por autor, la respuesta será en sí el propio fichero.
+
+GET     | http://localhost:8000/api/export          | Exportar resumen
