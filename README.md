@@ -105,6 +105,7 @@ POST    | http://localhost:8000/api/register    | Registro de usuario, en su res
   "role": "directivo" // bibliotecario o directivo
 }
 ```
+
 POST    | http://localhost:8000/api/login       | Identificación de usuario, en su respuesta ofrece el token de acceso
 ```json
 {
@@ -112,16 +113,22 @@ POST    | http://localhost:8000/api/login       | Identificación de usuario, en
   "password": "________"
 }
 ```
+
 GET     | http://localhost:8000/api/authors         | Obtener todos los autores
+
 GET     | http://localhost:8000/api/authors/{id}    | Obtener un autor
+
 GET     | http://localhost:8000/api/books           | Obtener todos los libros
+
 GET     | http://localhost:8000/api/books/{id}      | Obtener un libro
 
 Las siguientes rutas requieren del Headers: Authorization Bearer _______________________
 Estas las proporcionan los métodos register y login, devolviendo los datos del usuario y el token de acceso
 
 POST    | http://localhost:8000/api/logout          | Eliminar el token del usuario
+
 GET     | http://localhost:8000/api/user            | Obtener datos de un usuario
+
 POST    | http://localhost:8000/api/authors         | Crear autor
 ```json
 {
@@ -131,6 +138,7 @@ POST    | http://localhost:8000/api/authors         | Crear autor
   "library_author_books": ["library_book_ids"] // Establecer este campo si se quiere sincornizar con el autor sus libros
 }
 ```
+
 PUT     | http://localhost:8000/api/authors/{id}    | Actualizar datos del autor
 ```json
 {
@@ -140,7 +148,9 @@ PUT     | http://localhost:8000/api/authors/{id}    | Actualizar datos del autor
   "library_author_books": ["library_book_ids"] // Establecer este campo si se quiere sincornizar con el autor sus libros
 }
 ```
+
 DEL     | http://localhost:8000/api/authors/{id}    | Eliminar el autor
+
 POST    | http://localhost:8000/api/books           | Crear libro
 ```json
 {
@@ -150,6 +160,7 @@ POST    | http://localhost:8000/api/books           | Crear libro
   "library_book_authors": ["library_author_ids"] // Establecer este campo si se quiere sincornizar con el libro sus autores
 }
 ```
+
 PUT     | http://localhost:8000/api/books/{id}      | Actualizar datos del libro
 ```json
 {
@@ -159,5 +170,7 @@ PUT     | http://localhost:8000/api/books/{id}      | Actualizar datos del libro
   "library_book_authors": ["library_author_ids"] // Establecer este campo si se quiere sincornizar con el libro sus autores
 }
 ```
+
 DEL     | http://localhost:8000/api/books/{id}      | Eliminar el libro
+
 GET     | http://localhost:8000/api/export          | Exportar resumen para los directores
